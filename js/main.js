@@ -109,11 +109,17 @@ function mostrar_libro_favoritos(favoritos) {
         const btnFavorito = document.createElement("button");
         btnFavorito.textContent = "Agregar a Favorito";
         btnFavorito.classList.add("btn-favorito");
+
+       const btnBorrar = document.createElement("button");
+       btnBorrar.textContent = "Quitar del Carrito";
+       btnBorrar.classList.remove("remove");
+
        
          btnFavorito.onclick = function() {
              agregarFavorito(libros.id);
         }
-
+        
+        
         
         div_libro.appendChild(imagen_libro);
         div_libro.appendChild(titulo_libro);
@@ -123,3 +129,41 @@ function mostrar_libro_favoritos(favoritos) {
         contenedor_favoritos.appendChild(div_libro);
     })
 }
+
+
+
+
+
+
+libros.push(libros);
+
+let arreglo_JSON = JSON.stringify( libros);
+localStorage.setItem(" libros", arreglo_JSON);
+console.log(libros);
+
+
+
+
+function borrar_producto(e){
+
+    let abuelo = e.target.parentNode.parentNode;
+    abuelo.remove();
+}
+
+
+
+let btn_carrito = document.getElementById("agregarFavorito ");
+
+btn_carrito.addEventListener("click" , function(){
+
+    let libros = document.getElementById("libro");
+
+    if(carrito.style.display != "none"){
+        carrito.style.display = "none";
+    }
+    else{
+        carrito.style.display = "flex";   
+     }
+
+
+})
