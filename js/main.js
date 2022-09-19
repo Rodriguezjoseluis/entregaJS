@@ -167,3 +167,35 @@ btn_carrito.addEventListener("click" , function(){
 
 
 })
+
+
+
+Toastify({
+
+    text: "Se Elimino del Carrito",
+    duration: 3000,
+    gravity: `button`,
+    style: {
+    background: "linear-gradient(to right, #00b09b, #96c93d)",
+    },
+
+    }).showToast();
+            
+let hijo = e.target;
+let padre = hijo.parentNode;
+let abuelo = padre.parentNode;
+
+console.log(hijo);
+console.log(padre);
+console.log(abuelo);
+
+padre.remove();
+
+
+
+localStorage.clear(agregarFavorito);
+
+
+
+
+
