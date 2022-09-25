@@ -88,6 +88,16 @@ function agregarFavorito(id) {
     console.log(libro_filtrados);
     listado_favoritos.push(libro_encontrado);
     mostrar_libro_favoritos(listado_favoritos);
+
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'su libro fue guardado en favoritos',
+        showConfirmButton: false,
+        timer: 1500
+      })
+
+
 }
 
 function mostrar_libro_favoritos(favoritos) {
@@ -115,10 +125,18 @@ function mostrar_libro_favoritos(favoritos) {
        btnBorrar.classList.remove("remove");
 
        
-         btnFavorito.onclick = function() {
+        /* btnFavorito.onclick = function() {
              agregarFavorito(libros.id);
+             
+
         }
+        */
+       
         
+        
+        
+        
+
         
         
         div_libro.appendChild(imagen_libro);
@@ -169,33 +187,4 @@ btn_carrito.addEventListener("click" , function(){
 })
 
 
-
-Toastify({
-
-    text: "Se Elimino del Carrito",
-    duration: 3000,
-    gravity: `button`,
-    style: {
-    background: "linear-gradient(to right, #00b09b, #96c93d)",
-    },
-
-    }).showToast();
-            
-let hijo = e.target;
-let padre = hijo.parentNode;
-let abuelo = padre.parentNode;
-
-console.log(hijo);
-console.log(padre);
-console.log(abuelo);
-
-padre.remove();
-
-
-
-localStorage.clear(agregarFavorito);
-
-
-
-
-
+ 
